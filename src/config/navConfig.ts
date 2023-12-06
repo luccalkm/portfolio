@@ -1,19 +1,4 @@
-type NavLink = {
-  title: string;
-  href: string;
-};
-
-type NavMenu = {
-  home: string;
-  about: string;
-  contact: string;
-};
-
-type NavBarText = {
-  logoImage: string;
-  link: NavLink;
-  menu: NavMenu;
-};
+import { NavBarText } from "../types/textConfigTypes";
 
 export const navBarText: NavBarText = {
   logoImage: "#",

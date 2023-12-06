@@ -1,12 +1,12 @@
-import BrowserWindow from "./BrowserWindow";
+import { BrowserWindow } from "./BrowserWindow";
+import { Introduction } from "./Introduction";
 
-export interface IDescriptionProps {}
-
-export function Description(props: IDescriptionProps) {
+export const Description = () => {
 
   return (
     <>
       <BrowserWindow />
+      <Introduction />
     </>
   );
 }

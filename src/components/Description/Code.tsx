@@ -1,18 +1,17 @@
-import { DevData } from "../../types/descriptionTypes";
+import { DevData } from "../../types/textConfigTypes";
+import { ReactNode } from "react";
 
 interface ICodeProps {
   devData: DevData;
 }
 
-import React from "react";
-
-export function Code({ devData }: ICodeProps): JSX.Element {
+export const Code = ({ devData }: ICodeProps) => {
   const ColoredSpan = ({
     className,
     children,
   }: {
     className: string;
-    children: React.ReactNode;
+    children: ReactNode;
   }) => {
     return <span className={className}>{children}</span>;
   };
@@ -35,7 +34,7 @@ export function Code({ devData }: ICodeProps): JSX.Element {
   };
 
   return (
-    <div className="w-full bg-slate-900 p-4 font-mono rounded-md box-border">
+    <div className="fira-code w-full bg-slate-900 p-4 font-mono rounded-md box-border">
       <div className="w-full h-68 text-white">
         <ColoredSpan className="text-gray-500">1 |</ColoredSpan>{" "}
         <ColoredSpan className="text-purple-400">let</ColoredSpan>{" "}

@@ -11,6 +11,23 @@ export type DevData = {
 export type DescriptionText = {
   title: string;
   subtitle: string;
-  description: string;
+  description: {};
   devData: DevData;
+};
+
+export type NavLink = {
+  title: string;
+  href: string;
+};
+
+export type NavMenu = {
+  home: string;
+  about: string;
+  contact: string;
+};
+
+export type NavBarText = {
+  logoImage: string;
+  link: NavLink;
+  menu: NavMenu;
 };
