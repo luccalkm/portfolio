@@ -1,5 +1,4 @@
 export const links = {
-    github: '',
-    linkedin: '',
-    mail: '',
+    github: "https://github.com/luccalkm",
+    linkedin: "https://www.linkedin.com/in/luccalkm/",
 }

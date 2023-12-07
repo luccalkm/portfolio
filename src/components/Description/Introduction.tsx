@@ -1,6 +1,7 @@
 import { descriptionText } from "../../config/descriptionConfig";
 import { SocialIcon } from "../common/SocialIcon";
 import { ColoredSpan } from "../common/ColoredSpan";
+import { links } from "../../config/linksConfig";
 import github from "../../assets/icons8-github-100.png";
 import linkedin from "../../assets/icons8-linkedin-circled-100.png";
 import mail from "../../assets/icons8-circled-envelope-100.png";
@@ -32,11 +33,13 @@ export const Introduction = () => {
         )}
         <div className="flex justify-end">
           <SocialIcon
+            href={links.github}
             color="bg-transparent"
             showSocial={true}
             link={github}
           />
           <SocialIcon
+            href={links.linkedin}
             delay={150}
             color="bg-transparent"
             showSocial={true}

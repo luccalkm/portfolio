@@ -2,7 +2,7 @@ import { Container } from "../common/Container";
 import { NavBar } from "../common/NavBar";
 import { SocialMedia } from "../social/SocialMedia";
 import { Description } from "../description/Description";
-import { PieGraph } from "../common/PieGraph";
+import { Dashboard } from "../graphics/Dashboard";
 
 export const Home = () => {
   return (
@@ -15,17 +15,7 @@ export const Home = () => {
         </div>
       </Container>
       <Container bgColor="bg-gray-800">
-        <div className="grid grid-cols-3 gap-10 p-10">
-          <div className="bg-slate-700 rounded-lg p-3 flex flex-col gap-2 w-100 h-52 justify-center">
-            <PieGraph />
-          </div>
-          <div className="bg-slate-700 rounded-lg p-3 flex flex-col gap-2 w-100 h-52 justify-center">
-            <PieGraph />
-          </div>
-          <div className="bg-slate-700 rounded-lg p-3 flex flex-col gap-2 w-100 h-52 justify-center">
-            <PieGraph />
-          </div>
-        </div>
+        <Dashboard />
       </Container>
       <Container bgColor="bg-gray-950">
         <div className="w-full h-screen">

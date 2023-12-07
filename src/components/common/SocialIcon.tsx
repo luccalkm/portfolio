@@ -7,6 +7,7 @@ interface Props {
   showSocial: boolean;
   link: string;
   size?: number;
+  href?: string;
 }
 
 export const SocialIcon = ({
@@ -15,6 +16,7 @@ export const SocialIcon = ({
   color,
   position,
   delay,
+  href,
   showSocial,
 }: Props) => {
   const [isHovered, setHovered] = useState(false);
@@ -50,7 +52,7 @@ export const SocialIcon = ({
     <a
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      href={link}
+      href={href}
       className={`${baseSocialStyle} ${getDelay()} ${getTranslateClasses()} ${color} ${
         showSocial ? "scale-100" : "scale-0"
       } ${isHovered && showSocial && "scale-90"}`}

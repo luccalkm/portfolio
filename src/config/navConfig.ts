@@ -4,7 +4,6 @@ export type NavLink = {
 };
 
 export type NavMenu = {
-  home: string;
   about: string;
   contact: string;
   projects: string;
@@ -23,7 +22,6 @@ export const navBarText: NavBarText = {
     href: "#",
   },
   menu: {
-    home: "Home",
     about: "About",
     contact: "Contact",
     projects: "Projects",
