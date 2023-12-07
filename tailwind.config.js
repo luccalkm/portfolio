@@ -1,7 +1,11 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'contacts': "url(https://img.icons8.com/ios-filled/100/000000/contact-card.png)"
+      }
+    },
   },
   plugins: [],
   safelist: [

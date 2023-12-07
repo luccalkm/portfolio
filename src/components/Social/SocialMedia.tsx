@@ -1,5 +1,8 @@
 import { useState } from "react";
-import { SocialIcon } from "./SocialIcon";
+import { SocialIcon } from "../common/SocialIcon";
+import github from "../../assets/icons8-github-100.png";
+import linkedin from "../../assets/icons8-linkedin-circled-100.png";
+import mail from "../../assets/icons8-circled-envelope-100.png";
 
 export const SocialMedia = () => {
   const [showSocial, setShowSocial] = useState(false);
@@ -10,28 +13,30 @@ export const SocialMedia = () => {
 
   return (
     <div
-      className="fixed z-20 m-8 bottom-0 right-0 py-2 bg-red-500 rounded-full w-16 h-16 border-y-sky-950 cursor-pointer duration-200"
+      className={`bg-contacts bg-center bg-origin-content bg-contain bg-no-repeat bg-white ${
+        showSocial && "scale-100"
+      } fixed z-20 m-8 bottom-0 right-0 py-2 rounded-full w-16 h-16 cursor-pointer`}
       onClick={handleClick}
     >
       <SocialIcon
-        position={{ x: 0, y: -20 }}
+        position={{ x: -20, y: -1 }}
         color="bg-transparent"
         showSocial={showSocial}
-        link="https://img.icons8.com/stickers/100/linkedin-circled.png"
+        link={github}
       />
       <SocialIcon
         delay={150}
         color="bg-transparent"
-        position={{ x: 0, y: -36 }}
+        position={{ x: -36, y: -1 }}
         showSocial={showSocial}
-      link="https://img.icons8.com/stickers/100/github.png"
+        link={linkedin}
       />
       <SocialIcon
-      link="https://img.icons8.com/stickers/100/gmail-new.png"
         delay={300}
         color="bg-transparent"
-        position={{ x: 0, y: -52 }}
+        position={{ x: -52, y: -1 }}
         showSocial={showSocial}
+        link={mail}
       />
     </div>
   );

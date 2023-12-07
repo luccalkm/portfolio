@@ -1,5 +1,5 @@
-const links = {
+export const links = {
     github: '',
     linkedin: '',
-    gmail: '',
+    mail: '',
 }

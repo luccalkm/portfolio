@@ -1,9 +1,13 @@
 import { descriptionText } from "../../config/descriptionConfig";
+import { SocialIcon } from "../common/SocialIcon";
 import { ColoredSpan } from "../common/ColoredSpan";
-
-const { title, subtitle, description } = descriptionText;
+import github from "../../assets/icons8-github-100.png";
+import linkedin from "../../assets/icons8-linkedin-circled-100.png";
+import mail from "../../assets/icons8-circled-envelope-100.png";
 
 export const Introduction = () => {
+  const { title, subtitle, description } = descriptionText;  
+
   return (
     <div className="w-5/12 h-2/3 flex justify-center flex-col p-2">
       <div className="flex flex-row items-end justify-between mb-3">
@@ -26,6 +30,25 @@ export const Introduction = () => {
             </div>
           )
         )}
+        <div className="flex justify-end">
+          <SocialIcon
+            color="bg-transparent"
+            showSocial={true}
+            link={github}
+          />
+          <SocialIcon
+            delay={150}
+            color="bg-transparent"
+            showSocial={true}
+            link={linkedin}
+          />
+          <SocialIcon
+            delay={300}
+            color="bg-transparent"
+            showSocial={true}
+            link={mail}
+          />
+        </div>
       </div>
     </div>
   );
