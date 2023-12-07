@@ -1,9 +1,16 @@
-import { FC, PropsWithChildren } from "react";
+import { ReactNode } from "react";
 
-export const Container: FC<PropsWithChildren<{}>> = ({ children }) => {
+interface Props {
+  bgColor: string;
+  children: ReactNode;
+}
+
+export const Container = ({bgColor, children}: Props) => {
   return (
-    <div className="flex h-screen mx-auto bg-gray-950 text-white">
+    <div className={`flex h-content mx-auto ${bgColor} text-white`}>
       <div className="w-5/6 mx-auto">{children}</div>
     </div>
   );
 };
+
+

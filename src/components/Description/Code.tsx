@@ -1,21 +1,11 @@
-import { DevData } from "../../types/textConfigTypes";
-import { ReactNode } from "react";
+import { DevData } from "../../config/descriptionConfig";
+import { ColoredSpan } from "../common/ColoredSpan";
 
 interface ICodeProps {
   devData: DevData;
 }
 
 export const Code = ({ devData }: ICodeProps) => {
-  const ColoredSpan = ({
-    className,
-    children,
-  }: {
-    className: string;
-    children: ReactNode;
-  }) => {
-    return <span className={className}>{children}</span>;
-  };
-
   const renderValue = (value: string | number | string[]) => {
     if (typeof value === "string") {
       return <ColoredSpan className="text-yellow-600">"{value}"</ColoredSpan>;

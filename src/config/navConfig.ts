@@ -1,4 +1,20 @@
-import { NavBarText } from "../types/textConfigTypes";
+export type NavLink = {
+  title: string;
+  href: string;
+};
+
+export type NavMenu = {
+  home: string;
+  about: string;
+  contact: string;
+  projects: string;
+};
+
+export type NavBarText = {
+  logoImage: string;
+  link: NavLink;
+  menu: NavMenu;
+};
 
 export const navBarText: NavBarText = {
   logoImage: "#",
@@ -10,5 +26,6 @@ export const navBarText: NavBarText = {
     home: "Home",
     about: "About",
     contact: "Contact",
+    projects: "Projects",
   },
 };

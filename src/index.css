@@ -4,6 +4,7 @@
 
 :root {
   text-decoration: none;
+  font-family: 'Fira Code', monospace, sans-serif;
 }
 
 .bg-stripes {
@@ -70,8 +71,4 @@
   --bg-opacity: 0.9;
   background-color: #9f7aea;
   background-color: rgba(159, 122, 234, var(--bg-opacity));
-}
-
-.fira-code {
-  font-family: 'Fira Code', monospace, sans-serif;
 }
