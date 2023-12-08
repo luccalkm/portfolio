@@ -1,6 +1,7 @@
+import { GithubProvider } from "../../context/github";
 import { Container } from "../common/Container";
 import { NavBar } from "../common/NavBar";
-import { SocialMedia } from "../social/SocialMedia";
+// import { SocialMedia } from "../social/SocialMedia";
 import { Description } from "../description/Description";
 import { Dashboard } from "../graphics/Dashboard";
 
@@ -15,7 +16,9 @@ export const Home = () => {
         </div>
       </Container>
       <Container bgColor="bg-gray-800">
-        <Dashboard />
+        <GithubProvider>
+          <Dashboard />
+        </GithubProvider>
       </Container>
       <Container bgColor="bg-gray-950">
         <div className="w-full h-screen">

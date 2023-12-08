@@ -1,4 +1,4 @@
-export interface GithubContextProps {
+export interface Repository {
   id: number | null;
   node_id: string;
   name: string;
@@ -50,56 +50,3 @@ export interface GithubContextProps {
   watchers: number | null;
   default_branch: string;
 }
-
-export const DEFAULT_VALUE: GithubContextProps = {
-  id: null,
-  node_id: "",
-  name: "",
-  full_name: "",
-  private: false,
-  owner: {
-    login: "",
-    id: null,
-    node_id: "",
-    avatar_url: "",
-    gravatar_id: "",
-    url: "",
-    html_url: "",
-    followers_url: "",
-    following_url: "",
-    gists_url: "",
-    starred_url: "",
-    subscriptions_url: "",
-    organizations_url: "",
-    repos_url: "",
-    events_url: "",
-    received_events_url: "",
-    type: "",
-    site_admin: false,
-  },
-  html_url: "",
-  description: null,
-  fork: false,
-  url: "",
-  // ... all other fields with appropriate default values
-  homepage: null,
-  size: null,
-  stargazers_count: null,
-  watchers_count: null,
-  language: "",
-  has_issues: false,
-  has_projects: false,
-  has_downloads: false,
-  has_wiki: false,
-  has_pages: false,
-  forks_count: null,
-  mirror_url: null,
-  archived: false,
-  disabled: false,
-  open_issues_count: null,
-  license: null,
-  forks: null,
-  open_issues: null,
-  watchers: null,
-  default_branch: "",
-};
