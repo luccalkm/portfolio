@@ -2,7 +2,7 @@ import axios, { AxiosResponse } from "axios";
 
 const sleep = (delay: number) => new Promise((resolve) => setTimeout(resolve, delay));
 
-const token = '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'
+const token = import.meta.env.GITHUB_TOKEN;
 axios.defaults.baseURL = 'https://api.github.com';
 const responseBody = <T>(response: AxiosResponse<T>) => response.data;
 const user = 'luccalkm';
@@ -29,6 +29,7 @@ const requests = {
 const Repos = {
     list: async () => requests.get<any[]>(`/users/${user}/repos`),
     commits: async (repoName: string) => requests.get<any[]>(`/repos/${user}/${repoName}/commits`),
+    languagerPerRepo: async (repoName: string) => requests.get<any[]>(`/repos/${user}/${repoName}/languages`),
 }
 
 const agent = {

@@ -18,7 +18,7 @@ export const Introduction = () => {
       <div className="flex flex-col justify-center rounded-md bg-slate-800 p-2 gap-2">
         {(Object.values(description) as string[]).map(
           (value: string, index: number) => (
-            <div className="flex flex-row bg-slate-700 p-2 items-start hover:bg-slate-600">
+            <div className="text-base flex flex-row bg-slate-700 p-2 items-start hover:bg-slate-600">
               <ColoredSpan
                 className="font-medium pl-2 pr-4 text-green-300"
                 key={value}

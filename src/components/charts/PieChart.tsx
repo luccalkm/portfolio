@@ -1,28 +1,15 @@
-import { Line } from "react-chartjs-2";
-import loadingImage from "../../assets/loading.json";
-import Lottie from "lottie-react";
+import { Pie } from "react-chartjs-2";
 import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
+  Chart,
+  ArcElement,
+  Tooltip,
+  Legend,
   Title as ChartTitle,
-  Tooltip,
-  Legend,
-  Filler,
 } from "chart.js";
+import Lottie from "lottie-react";
+import loadingImage from "../../assets/loading.json";
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  ChartTitle,
-  Tooltip,
-  Legend,
-  Filler
-);
+Chart.register(ArcElement, Tooltip, Legend, ChartTitle);
 
 interface Props {
   content: { [key: string]: number };
@@ -30,27 +17,31 @@ interface Props {
   title: string;
 }
 
-export const AreaChart = ({ title, content, loading }: Props) => {
+export const PieChart = ({ title, content, loading }: Props) => {
   const graphSize = "w-96 h-96";
 
-  if (loading) {
+  if (loading)
     return (
       <div className={`flex justify-center items-center ${graphSize}`}>
         <Lottie className="w-full h-full" animationData={loadingImage} />
       </div>
     );
-  }
 
   const data = {
     labels: Object.keys(content),
     datasets: [
       {
-        label: "Quantidade de commits",
         data: Object.values(content),
-        fill: true,
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
-        borderColor: "rgb(255, 99, 132)",
-        tension: 0.1,
+        backgroundColor: [
+          "#7daedc",
+          "#ff7474",
+          "#f8e287",
+          "#f5a623",
+          "#a3d977",
+          "#b07ad9",
+        ],
+        borderColor: ["#000000"],
+        borderWidth: 1,
       },
     ],
   };
@@ -78,16 +69,15 @@ export const AreaChart = ({ title, content, loading }: Props) => {
         color: "#ffffff",
       },
     },
-    scales: {
-      y: {
-        beginAtZero: true, // Ensures the y-axis starts at zero
-      },
-    },
   };
 
   return (
-    <div className={`${graphSize}`}>
-      <Line data={data} options={options} />
+    <div className="bg-slate-700 rounded-md p-4 flex justify-center items-center">
+      <div className="w-full h-full flex items-center justify-center">
+        <div className={`${graphSize}`}>
+          <Pie data={data} options={options} />
+        </div>
+      </div>
     </div>
   );
 };

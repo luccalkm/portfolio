@@ -1,9 +1,13 @@
 import { GithubProvider } from "../../context/github";
 import { Container } from "../common/Container";
 import { NavBar } from "../common/NavBar";
+import { Wrapper } from "../common/Wrapper";
 // import { SocialMedia } from "../social/SocialMedia";
 import { Description } from "../description/Description";
-import { Dashboard } from "../graphics/Dashboard";
+import { Dashboard } from "../charts/Dashboard";
+import { ColoredSpan } from "../common/ColoredSpan";
+import { ProjectCard } from "../projects/ProjectCard";
+import { Projects } from "../projects/Projects";
 
 export const Home = () => {
   return (
@@ -11,39 +15,17 @@ export const Home = () => {
       {/* <SocialMedia /> */}
       <NavBar />
       <Container bgColor="bg-gray-950">
-        <div className="w-full my-44 h-3/6">
+        <Wrapper className="w-full my-44 h-3/6">
           <Description />
-        </div>
+        </Wrapper>
       </Container>
-      <Container bgColor="bg-gray-800">
+      {/* <Container bgColor="bg-gray-800">
         <GithubProvider>
           <Dashboard />
         </GithubProvider>
-      </Container>
+      </Container> */}
       <Container bgColor="bg-gray-950">
-        <div className="w-full h-screen">
-          <div className="w-full flex flex-col items-start justify-center rounded p-5">
-            <h1 className="text-2xl mt-3 font-bold ">Projetos</h1>
-            <p className="mb-5 ">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Doloribus, adipisci!
-            </p>
-            <div className="grid grid-cols-3 gap-10">
-              <div className="bg-slate-700 rounded-lg p-3 flex flex-col gap-2">
-                <h1 className="text-2xl bg-slate-900 p-2 rounded-md font-bold text-center">
-                  Projeto 1
-                </h1>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Dolor, eum?
-                </p>
-                <button className="ml-auto rounded-md bg-blue-400 text-blue-700 font-bold px-4 py-3">
-                  Visitar
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Projects />
       </Container>
       {/*
             text-yellow-600

@@ -6,13 +6,13 @@ import {
   useState,
 } from "react";
 import agent from "../config/agent";
-import { Repository } from "./repos";
+import { Commit, Language, Repository } from "./githubInterfaces";
 
 interface ContextProps {
   getLangsCount: () => { [key: string]: number };
   loading: boolean;
   getRepoCount: () => number;
-  getMonthlyCommitCounts: () => Promise<{ [key: string]: number }>;
+  getMonthlyCommitCounts: () => Promise<Commit>;
 }
 
 interface Props {
@@ -33,6 +33,7 @@ const GithubProvider = ({ children }: Props) => {
   const [repos, setRepos] = useState<Repository[]>([]);
   const [loading, setLoading] = useState(false);
 
+  // Get all repo info
   useEffect(() => {
     setLoading(true);
     const fetchRepos = async () => {
@@ -49,7 +50,7 @@ const GithubProvider = ({ children }: Props) => {
     fetchRepos();
   }, []);
 
-  const getLangsCount = (): { [key: string]: number } => {
+  const getLangsCount = (): Language => {
     const langs = repos.reduce((prev: any, curr: any) => {
       const lang = curr.language;
       if (lang) prev[lang] = (prev[lang] || 0) + 1;
@@ -63,9 +64,7 @@ const GithubProvider = ({ children }: Props) => {
     return repos.length;
   };
 
-  const getMonthlyCommitCounts = async (): Promise<{
-    [key: string]: number;
-  }> => {
+  const getMonthlyCommitCounts = async (): Promise<Commit> => {
     try {
       let monthlyCommits: { [key: string]: number } = {};
 
@@ -88,12 +87,13 @@ const GithubProvider = ({ children }: Props) => {
         });
       });
 
-      console.log(monthlyCommits);
+      const months = Object.keys(monthlyCommits).sort();
+      const count = months.map((month) => monthlyCommits[month]);
 
-      return monthlyCommits;
+      return { months, count } as Commit;
     } catch (error) {
       console.error(error);
-      return {};
+      return { months: [], count: [] };
     }
   };
 
