@@ -34,11 +34,25 @@ export const projectText: Card = {
       status: CardStatus.finished,
     },
     {
+      title: "SeuAdvogadoImobiliario",
+      tags: ["ReactJS", "Context", "TailwindCss", "Typescript"],
+      description:
+        "Uma aplicação simples feita com o intuito de introduzir conceitos no desenvolvimento, o aprendizado com bibliotecas de gráficos e planilhas. A aplicação é capaz de gerar gráficos a partir de uma planilha modelo disponibilizada. Possui versão mobile e desktop.",
+      status: CardStatus.finished,
+    },
+    {
+      title: "OnionPlanilhas",
+      tags: ["ASP.NET", "ReactJS", "SQL", "EntityFramework"],
+      description:
+        "Uma aplicação simples feita com o intuito de introduzir conceitos no desenvolvimento, o aprendizado com bibliotecas de gráficos e planilhas. A aplicação é capaz de gerar gráficos a partir de uma planilha modelo disponibilizada. Possui versão mobile e desktop.",
+      status: CardStatus.finished,
+    },
+    {
       title: "Bid Wheels",
-      tags: ["ASP.NET", "MongoDB", "RabbitMQ", "ReactJS", "EntityFramework", "Docker", "PostgreSQL"],
+      tags: ["ASP.NET", "MongoDB", "RabbitMQ", "ReactJS", "EntityFramework", "Docker", "SQL"],
       description:
         "Uma aplicação feita para desenvolver um sistema de leilão de carros. É possível cadastrar seu usuário, logar, criar, editar e excluir leilões, além de poder dar lances nos leilões de outros usuários. Há também comentários nos leilões, etc. O foco desse projeto é a arquitetura de microsserviços!.",
-      status: CardStatus.paused,
+      status: CardStatus.inProgress,
     },
     {
       title: "E-commerce ",

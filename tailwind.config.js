@@ -10,6 +10,18 @@ module.exports = {
   plugins: [],
   safelist: [
     {
+      pattern: /border-/,
+      variants: ["responsive", "hover", "focus"],
+    },
+    {
+      pattern: /bg-/,
+      variants: ["responsive", "hover", "focus"],
+    },
+    {
+      pattern: /text-/,
+      variants: ["responsive", "hover", "focus"],
+    },
+    {
       pattern: /translate-x-/,
       variants: ["responsive", "hover", "focus"],
     },

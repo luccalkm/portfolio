@@ -11,7 +11,7 @@ export const Code = ({ devData }: ICodeProps) => {
       return <ColoredSpan className="text-yellow-600">"{value}"</ColoredSpan>;
     }
     if (typeof value === "number") {
-      return <ColoredSpan className="text-green-300">{value}</ColoredSpan>;
+      return <ColoredSpan className="text-emerald-300">{value}</ColoredSpan>;
     }
     if (Array.isArray(value)) {
       return value.map((item, index) => (
